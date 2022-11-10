@@ -1,4 +1,10 @@
+from entityTypes import Chromosome, Interaction, Locus, Gene, Motif
+import sqlite3
+
 def insertChromosomes():
+  conn = sqlite3.connect("example.db")
+  cursor = conn.cursor()
+
   option = input("""
 ---Select Insert Type---
 1.) Import Data File
@@ -11,7 +17,15 @@ Enter Here: """)
     print("Inserting . . .")
   elif option == '2': 
     print("Inserting . . .")
+    temp = Chromosome("", "")
+    temp.chromosomeID = input("Chromosome ID:  ")
+    temp.cellType = input("Cell Type:  ")
+    cursor.execute("INSERT INTO chromosomes VALUES (?, ?)", (temp.chromosomeID, temp.cellType))
+    conn.commit()
+    conn.close()
   elif option == 'x': return
+
+  
 
 def insertInteractions():
   option = input("""
