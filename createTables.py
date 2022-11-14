@@ -1,7 +1,7 @@
 import sqlite3
 
 def createTables():
-  conn = sqlite3.connect("example.db")
+  conn = sqlite3.connect("DataTables.db")
   cursor = conn.cursor()
 
   cursor.execute("""CREATE TABLE chromosomes (
@@ -31,9 +31,7 @@ def createTables():
     DNexp text,
     PGNexp text,
     length text,
-    locusID text,
-    PRIMARY KEY (name), 
-    FOREIGN KEY (locusID) REFERENCES loci(locusID) )""")
+    PRIMARY KEY (name) )""")
 
   cursor.execute("""CREATE TABLE motifs (
     motifID text,
@@ -45,7 +43,7 @@ def createTables():
     threshold text,
     cellType text,
     locusID text,
-    PRIMARY KEY (motifID), 
+    PRIMARY KEY (motifID),
     FOREIGN KEY (locusID) REFERENCES loci(locusID) )""")
 
   conn.commit()

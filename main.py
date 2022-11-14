@@ -1,4 +1,5 @@
 from insertData import insertData
+from queryData import queryData
 from displayData import displayData
 from createTables import createTables
 
@@ -14,6 +15,7 @@ while 1:
 1.) Insert Data
 2.) Display Data
 3.) Create Data Tables
+4.) Make Query
 x.) Close
 
 Enter Here: """)
@@ -21,8 +23,6 @@ Enter Here: """)
   if option == '1': insertData()
   elif option == '2': displayData()
   elif option == '3': createTables()
+  elif option == '4': queryData()
   elif option == 'x': closeProg()
   else: print("Invalid option")
-
-  cont = input("\nContinue? (Y/N):  ")
-  if cont != 'y' and cont != 'Y': closeProg()

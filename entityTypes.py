@@ -45,7 +45,7 @@ class Gene:
 
 class Motif:
 
-    def __init__(self, motifID, name, familyName, chromosome, start, end, threshold, cellType):
+    def __init__(self, motifID, name, familyName, chromosome, start, end, threshold, cellType, locusID):
         self.motifID = motifID
         self.name = name
         self.familyName = familyName
@@ -54,6 +54,16 @@ class Motif:
         self.end = end
         self.threshold = threshold
         self.cellType = cellType
+        self.locusID = locusID
 
     def __repr__(self):
-        return "Motif: {} | {} | {} | {} | {} | {} | {} | {} ".format(self.motifID, self.name, self.familyName, self.chromosome, self.start, self.end, self.threshold, self.cellType)
+        return "Motif: {} | {} | {} | {} | {} | {} | {} | {} | {}".format(
+            self.motifID, 
+            self.name, 
+            self.familyName, 
+            self.chromosome, 
+            self.start, 
+            self.end, 
+            self.threshold, 
+            self.cellType, 
+            self.locusID)
